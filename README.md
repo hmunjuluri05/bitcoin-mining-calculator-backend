@@ -2,6 +2,19 @@
 
 This repository contains a **FastAPI** backend for calculating the profitability of Bitcoin mining operations based on user inputs. It interfaces with a provided frontend to deliver real-time profitability estimates.
 
+## Table of Contents
+
+- [Features](#features)
+- [Assumptions](#assumptions)
+- [Impact of Assumptions](#impact-of-assumptions)
+- [API Endpoints](#api-endpoints)
+  - [Calculate Profitability](#calculate-profitability)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Clone the repository](#clone-the-repository)
+  - [Install Dependencies](#install-dependencies-)
+  - [Run the Application](#run-the-application-)
+  - [Access the API](#access-the-api-)
 
 ## Features
 
@@ -17,6 +30,12 @@ This repository contains a **FastAPI** backend for calculating the profitability
   - Hash rate is provided in TH/s. 
   - Power consumption is provided in Watts.
   - The current Bitcoin block reward is assumed to be 6.25 BTC.
+
+## Impact of Assumptions
+
+- **Network Difficulty Placeholder**: Using a static or placeholder value for network difficulty can lead to inaccurate profitability calculations. It's crucial to integrate a reliable source for real-time difficulty data.
+- **Exclusion of Additional Costs**: Not accounting for mining pool fees, hardware depreciation, or maintenance costs can overestimate profitability.
+- **Fixed Block Reward**: The block reward may change in the future due to Bitcoin halving events, affecting revenue projections.
 
 ## API Endpoints
 
@@ -60,15 +79,14 @@ This repository contains a **FastAPI** backend for calculating the profitability
 ### Prerequisites
 Make sure you have Python 3.7 or higher installed.
 
-### Steps to Set Up the Project
-#### Clone the Repository:
+### Clone the Repository:
 
 ```bash
 git clone https://github.com/hmunjuluri05/bitcoin-mining-calculator-backend.git
 cd bitcoin-mining-calculator-backend
 ```
 
-#### Install Dependencies: 
+### Install Dependencies: 
 You can install the required dependencies using pip. It’s recommended to create a virtual environment:
 
 ```bash
@@ -77,13 +95,13 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-#### Run the Application: 
+### Run the Application: 
 Start the FastAPI application with the following command:
 
 ```bash
 uvicorn app.main:app --reload
 ````
-#### Access the API: 
+### Access the API: 
   - The API will be running at http://localhost:8000
   - You can access the interactive API documentation at http://localhost:8000/docs
 
